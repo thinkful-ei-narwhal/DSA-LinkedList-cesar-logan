@@ -17,6 +17,7 @@ function main() {
   console.log(SLL.find('Helo'));
   SLL.insertAt('Kat',3);
   console.log(SLL.find('Starbuck'));
+  SLL.remove('Tauhida');
 }
 
 const mainRun = main();
