@@ -1,8 +1,35 @@
 const LinkedList = require('./linkedlist.js');
 
+function display(list) {
+  let temp= list.head;
+  while(temp !== null){
+    console.log(temp.value);
+    temp=temp.next;
+  }
+}
+
+function size(list) {
+  let temp= list.head;
+  let value=0;
+  while(temp !== null){
+    temp=temp.next;
+    value++;
+  }
+  console.log(value);
+}
+
+function isEmpty(list) {
+  let temp= list.head;
+  if(temp !== null){
+    return false;
+  }else{
+    return true;
+  }
+}
 
 function main() {
   const SLL = new LinkedList;
+  const empty = new LinkedList;
   SLL.insertFirst('Apollo');
   SLL.insertFirst('Boomer');
   SLL.insertFirst('Helo');
@@ -18,6 +45,14 @@ function main() {
   SLL.insertAt('Kat',3);
   console.log(SLL.find('Starbuck'));
   SLL.remove('Tauhida');
+  console.log('///////////////3 display()//////////////');
+  display(SLL);
+  console.log('///////////////3 size()//////////////');
+  size(SLL);
+  console.log('///////////////3 isEmpty()//////////////');
+  console.log(isEmpty(SLL));
+  console.log(isEmpty(empty));
+  console.log('///////////////3 findPrevious()//////////////');
 }
 
 const mainRun = main();
