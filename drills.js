@@ -39,6 +39,16 @@ function findPrevious(list, key) {
   console.log(previous);
 }
 
+function findLast(list) {
+  let temp= list.head;
+  let value;
+  while(temp !== null){
+    value=temp.value;
+    temp=temp.next;
+  }
+  console.log(value);
+}
+
 function main() {
   const SLL = new LinkedList;
   const empty = new LinkedList;
@@ -66,6 +76,8 @@ function main() {
   console.log(isEmpty(empty));
   console.log('///////////////3 findPrevious()//////////////');
   findPrevious(SLL,'Husker');
+  console.log('///////////////3 findLast()//////////////');
+  findLast(SLL);
 }
 
 const mainRun = main();
