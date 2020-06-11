@@ -63,6 +63,14 @@ function reverse(list) {
 }
 
 function thirdEnd(list) {
+  let temp= list.head;
+  let value;
+  while(temp.next.next !== null){
+    value=temp.value;
+    temp=temp.next;
+  }
+  console.log(value);
+
 }
 
 function main() {
