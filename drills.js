@@ -27,6 +27,18 @@ function isEmpty(list) {
   }
 }
 
+function findPrevious(list, key) {
+  let temp= list.head;
+  let previous;
+  while(temp !== null){
+    if(temp.value !== key){
+      previous=temp.value;
+    }
+    (temp.value === key)? temp=null : temp=temp.next;
+  }
+  console.log(previous);
+}
+
 function main() {
   const SLL = new LinkedList;
   const empty = new LinkedList;
@@ -53,6 +65,7 @@ function main() {
   console.log(isEmpty(SLL));
   console.log(isEmpty(empty));
   console.log('///////////////3 findPrevious()//////////////');
+  findPrevious(SLL,'Husker');
 }
 
 const mainRun = main();
