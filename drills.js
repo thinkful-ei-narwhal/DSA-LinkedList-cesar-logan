@@ -15,6 +15,8 @@ function main() {
   console.log(SLL.find('Athena'));
   SLL.insertAfter('Hotdog','Helo');
   console.log(SLL.find('Helo'));
+  SLL.insertAt('Kat',3);
+  console.log(SLL.find('Starbuck'));
 }
 
 const mainRun = main();

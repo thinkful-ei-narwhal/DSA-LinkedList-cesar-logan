@@ -83,6 +83,15 @@ class LinkedList {
     }
     currNode.next=  new _Node(item, currNode.next);
   }
+
+  insertAt(item,index){
+    let currNode = this.head;
+    for(let i = 1; i < index-1; i++) {
+      currNode = currNode.next;  
+    }
+    currNode.next = new _Node(item, currNode.next);
+  }
+
 }
 
 module.exports = LinkedList;
