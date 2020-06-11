@@ -49,6 +49,22 @@ function findLast(list) {
   console.log(value);
 }
 
+function reverse(list) {
+  let current= list.head;
+  let previous= null;
+  while(current !== null){
+    let temp= current.next;//save next pointer
+    current.next=previous;//change pointer
+    previous=current;
+    current=temp;//return saved pointer
+  }
+  list.head= previous;
+  return list;
+}
+
+function thirdEnd(list) {
+}
+
 function main() {
   const SLL = new LinkedList;
   const empty = new LinkedList;
@@ -67,6 +83,7 @@ function main() {
   SLL.insertAt('Kat',3);
   console.log(SLL.find('Starbuck'));
   SLL.remove('Tauhida');
+  //number 3
   console.log('///////////////3 display()//////////////');
   display(SLL);
   console.log('///////////////3 size()//////////////');
@@ -78,6 +95,17 @@ function main() {
   findPrevious(SLL,'Husker');
   console.log('///////////////3 findLast()//////////////');
   findLast(SLL);
+  //4. Mystery program
+  //A:it moves the poiner space foward Polynomial time O(n^k)
+
+  //5. Reverse a list
+  console.log('///////////////5 Reverse()//////////////');
+  display(reverse(SLL));
+
+  //6. 3rd from the end
+  console.log('///////////////6 thirdEnd()//////////////');
+  thirdEnd(SLL);
+
 }
 
 const mainRun = main();
