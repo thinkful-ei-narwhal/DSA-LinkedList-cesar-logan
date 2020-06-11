@@ -15,7 +15,7 @@ function size(list) {
     temp=temp.next;
     value++;
   }
-  console.log(value);
+  return value;
 }
 
 function isEmpty(list) {
@@ -70,12 +70,36 @@ function thirdEnd(list) {
     temp=temp.next;
   }
   console.log(value);
-
 }
+
+function middle(list) {
+  let end = list.head;
+  let middle = list.head;
+
+  while(end !== null && end.next !== null){
+    end=end.next.next;
+    middle= middle.next;
+  }
+  return middle.value;
+}
+
+function cycle(list) {
+  let slow = list.head;
+  let fast = list.head;
+  let repeat = false;
+  while((fast !== null) && (repeat !== true) && (fast.next !== null)){
+    slow= slow.next;
+    fast= fast.next.next;
+    (fast===slow)? repeat=true:repeat=false;
+  }
+  return repeat;
+}
+
 
 function main() {
   const SLL = new LinkedList;
   const empty = new LinkedList;
+  const cyclic = new LinkedList;
   SLL.insertFirst('Apollo');
   SLL.insertFirst('Boomer');
   SLL.insertFirst('Helo');
@@ -95,7 +119,7 @@ function main() {
   console.log('///////////////3 display()//////////////');
   display(SLL);
   console.log('///////////////3 size()//////////////');
-  size(SLL);
+  console.log(size(SLL));
   console.log('///////////////3 isEmpty()//////////////');
   console.log(isEmpty(SLL));
   console.log(isEmpty(empty));
@@ -113,6 +137,22 @@ function main() {
   //6. 3rd from the end
   console.log('///////////////6 thirdEnd()//////////////');
   thirdEnd(SLL);
+
+  //7. Middle of a list
+  console.log('///////////////7 middle()//////////////');
+  SLL.insertFirst('Tauhida');
+  console.log(middle(SLL));
+
+  //8. Cycle in a list
+  console.log('///////////////8 cycle()//////////////');
+  cyclic.insertFirst('lenin');
+  cyclic.insertFirst('cesar');
+  cyclic.insertFirst('morales');
+  cyclic.head.next.next= cyclic.head;
+  console.log(cycle(cyclic));
+  console.log(cycle(SLL));
+  //9.  Doubly linked list
+  console.log('///////////////9 doubly()//////////////');
 
 }
 
